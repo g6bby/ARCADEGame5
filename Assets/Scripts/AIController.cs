@@ -58,4 +58,5 @@ public class AIController : MonoBehaviour
         // Replace this with your desired attack behavior
         Debug.Log("Attacking player!");
     }
+    
 }
