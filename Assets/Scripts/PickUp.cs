@@ -8,10 +8,16 @@ public class PickUp : MonoBehaviour
 {
     public GameObject errorMessage;
     public GameObject pressE;
+    public GameObject noclipText;
 
     public GameObject hammer;
     public GameObject axe;
     public GameObject shotgun;
+
+    public GameObject topdownCam;
+    public GameObject playerCam;
+
+    public GameObject floor;
 
     private bool playerInRange = false;
 
@@ -19,6 +25,7 @@ public class PickUp : MonoBehaviour
     {
         pressE.SetActive(false);
         errorMessage.SetActive(false);
+        noclipText.SetActive(false);
     }
 
     void Update()
@@ -37,6 +44,8 @@ public class PickUp : MonoBehaviour
         {
             playerInRange = true;
             pressE.SetActive(true);
+
+            StartCoroutine(sceneNext());
         }
     }
 
@@ -48,5 +57,15 @@ public class PickUp : MonoBehaviour
             pressE.SetActive(false);
             errorMessage.SetActive(false);
         }
+    }
+
+    IEnumerator sceneNext()
+    {
+        yield return new WaitForSeconds(5.0f);
+
+        topdownCam.SetActive(false);
+        playerCam.SetActive(true);
+        floor.SetActive(false);
+        noclipText.SetActive(true);
     }
 }
