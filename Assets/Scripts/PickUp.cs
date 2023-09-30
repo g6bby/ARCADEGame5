@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PickUp : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class PickUp : MonoBehaviour
 
     public GameObject topdownCam;
     public GameObject playerCam;
+    public GameObject pixelCam;
 
     public GameObject floor;
 
@@ -61,11 +63,17 @@ public class PickUp : MonoBehaviour
 
     IEnumerator sceneNext()
     {
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(4.0f);
 
         topdownCam.SetActive(false);
+        pixelCam.SetActive(false);
         playerCam.SetActive(true);
         floor.SetActive(false);
         noclipText.SetActive(true);
+
+        yield return new WaitForSeconds(6.0f);
+
+        SceneManager.LoadScene("SampleScene");
+
     }
 }

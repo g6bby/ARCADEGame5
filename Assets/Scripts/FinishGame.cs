@@ -9,7 +9,7 @@ public class FinishGame : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("Level2");
         }
     }
     
@@ -17,7 +17,7 @@ public class FinishGame : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene("Start");
         }
     }
 }
