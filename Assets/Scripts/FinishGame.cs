@@ -5,6 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class FinishGame : MonoBehaviour
 {
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+    }
+    
     void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.CompareTag("Player"))
