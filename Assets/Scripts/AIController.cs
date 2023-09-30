@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class AIController : MonoBehaviour
 {
-    public Transform player; // Reference to the player's Transform
-    public float attackRange = 2f; // Range at which AI attacks
-    public float attackCooldown = 1f; // Cooldown between attacks
+    public Transform player; 
+    public float attackRange = 2f;
+    public float attackCooldown = 1f; 
 
     private bool isTagged = false;
     private float nextAttackTime = 0f;
@@ -16,8 +17,7 @@ public class AIController : MonoBehaviour
     private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        // Initialize the player reference (you can do this in the Inspector)
-        // player = GameObject.FindGameObjectWithTag("Player").transform;
+
     }
 
     private void Update()
@@ -30,7 +30,6 @@ public class AIController : MonoBehaviour
 
                 if (Vector3.Distance(transform.position, player.position) <= attackRange)
                 {
-                    // Check if it's time to attack
                     if (Time.time >= nextAttackTime)
                     {
                         Attack();
@@ -48,15 +47,18 @@ public class AIController : MonoBehaviour
     public void Tag()
     {
         isTagged = true;
-        navMeshAgent.ResetPath(); // Stop AI navigation when tagged
+        navMeshAgent.ResetPath(); 
     }
 
     private void Attack()
     {
-        // Implement your attack logic here
-        // For example, you can decrease the player's health or perform other actions
-        // Replace this with your desired attack behavior
-        Debug.Log("Attacking player!");
     }
     
+    void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+    }
 }
