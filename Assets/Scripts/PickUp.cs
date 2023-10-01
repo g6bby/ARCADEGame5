@@ -36,6 +36,8 @@ public class PickUp : MonoBehaviour
         {
             errorMessage.SetActive(true);
             pressE.SetActive(false);
+            StartCoroutine(sceneNext());
+
 
         }
     }
@@ -47,7 +49,7 @@ public class PickUp : MonoBehaviour
             playerInRange = true;
             pressE.SetActive(true);
 
-            StartCoroutine(sceneNext());
+            //StartCoroutine(sceneNext());
         }
     }
 
