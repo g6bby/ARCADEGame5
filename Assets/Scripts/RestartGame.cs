@@ -11,7 +11,7 @@ public class RestartGame : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            highScoreData.ClearHighScore();
+            //highScoreData.ClearHighScore();
             SceneManager.LoadScene("Start");
         }
     }
