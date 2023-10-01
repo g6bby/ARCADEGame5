@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class FinishGame : MonoBehaviour
 {
+    public HighScoreData highScoreData;
+
     private void Update()
     {
         if (Input.GetKey(KeyCode.Space))
@@ -17,8 +19,8 @@ public class FinishGame : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Start");
-
+            SceneManager.LoadScene("end");
+            //highScoreData.ClearHighScore();
         }
     }
 }

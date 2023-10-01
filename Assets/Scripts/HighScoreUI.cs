@@ -17,6 +17,6 @@ public class HighScoreUI : MonoBehaviour
     public void UpdateHighScoreText()
     {
         int highestScore = highScoreData.GetHighScore();
-        highScoreText.text = $"High Score: {highestScore}/10";
+        highScoreText.text = $"High Score: {highestScore}/ 10";
     }
 }

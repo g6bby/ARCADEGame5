@@ -96,7 +96,7 @@ MonoBehaviour:
     value: 0
   scale:
     overrideState: 1
-    value: 0.8
+    value: 0.86
 --- !u!114 &8671935568486484071
 MonoBehaviour:
   m_ObjectHideFlags: 3
