@@ -18,6 +18,7 @@ public class FinishGame : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene("Start");
+
         }
     }
 }
