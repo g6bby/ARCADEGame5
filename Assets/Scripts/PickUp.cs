@@ -63,7 +63,7 @@ public class PickUp : MonoBehaviour
 
     IEnumerator sceneNext()
     {
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(5.0f);
 
         topdownCam.SetActive(false);
         pixelCam.SetActive(false);
