@@ -9,7 +9,7 @@ public class RestartGame : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.R))
         {
             //highScoreData.ClearHighScore();
             SceneManager.LoadScene("Start");
