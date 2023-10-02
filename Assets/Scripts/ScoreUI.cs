@@ -9,11 +9,6 @@ public class ScoreUI : MonoBehaviour
     public TextMeshProUGUI highScoreText;
     public GameManager gameManager;
 
-    private void Start()
-    {
-        UpdateScoreText();
-    }
-
     private void Update()
     {
         UpdateScoreText();
